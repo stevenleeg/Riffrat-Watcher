@@ -11,8 +11,11 @@
 		AAE18DC4164C569C00FC8D92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE18DC2164C569C00FC8D92 /* InfoPlist.strings */; };
 		AAE18DC6164C569C00FC8D92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE18DC5164C569C00FC8D92 /* main.m */; };
 		AAE18DCA164C569C00FC8D92 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE18DC8164C569C00FC8D92 /* Credits.rtf */; };
-		AAE18DCD164C569C00FC8D92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE18DCC164C569C00FC8D92 /* AppDelegate.m */; };
+		AAE18DCD164C569C00FC8D92 /* MenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE18DCC164C569C00FC8D92 /* MenuDelegate.m */; };
 		AAE18DD0164C569C00FC8D92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE18DCE164C569C00FC8D92 /* MainMenu.xib */; };
+		AAE18DDC164C5BCE00FC8D92 /* ListenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE18DDB164C5BCE00FC8D92 /* ListenManager.m */; };
+		AAE18DE1164DD42000FC8D92 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE18DE0164DD42000FC8D92 /* Track.m */; };
+		AAE18DE4164E15A100FC8D92 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE18DE3164E15A100FC8D92 /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +29,17 @@
 		AAE18DC5164C569C00FC8D92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAE18DC7164C569C00FC8D92 /* Riffrat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Riffrat-Prefix.pch"; sourceTree = "<group>"; };
 		AAE18DC9164C569C00FC8D92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		AAE18DCB164C569C00FC8D92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AAE18DCC164C569C00FC8D92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AAE18DCB164C569C00FC8D92 /* MenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDelegate.h; sourceTree = "<group>"; };
+		AAE18DCC164C569C00FC8D92 /* MenuDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuDelegate.m; sourceTree = "<group>"; };
 		AAE18DCF164C569C00FC8D92 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AAE18DDA164C5BCE00FC8D92 /* ListenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenManager.h; sourceTree = "<group>"; };
+		AAE18DDB164C5BCE00FC8D92 /* ListenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenManager.m; sourceTree = "<group>"; };
+		AAE18DDD164DD20400FC8D92 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		AAE18DDE164DD20400FC8D92 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		AAE18DDF164DD42000FC8D92 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		AAE18DE0164DD42000FC8D92 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		AAE18DE2164E0F7400FC8D92 /* ListenManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenManagerDelegate.h; sourceTree = "<group>"; };
+		AAE18DE3164E15A100FC8D92 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/ScriptingBridge.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE18DBA164C569C00FC8D92 /* Cocoa.framework in Frameworks */,
+				AAE18DE4164E15A100FC8D92 /* ScriptingBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +75,7 @@
 		AAE18DB8164C569C00FC8D92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAE18DE3164E15A100FC8D92 /* ScriptingBridge.framework */,
 				AAE18DB9164C569C00FC8D92 /* Cocoa.framework */,
 				AAE18DBB164C569C00FC8D92 /* Other Frameworks */,
 			);
@@ -82,10 +95,17 @@
 		AAE18DBF164C569C00FC8D92 /* Riffrat */ = {
 			isa = PBXGroup;
 			children = (
-				AAE18DCB164C569C00FC8D92 /* AppDelegate.h */,
-				AAE18DCC164C569C00FC8D92 /* AppDelegate.m */,
-				AAE18DCE164C569C00FC8D92 /* MainMenu.xib */,
 				AAE18DC0164C569C00FC8D92 /* Supporting Files */,
+				AAE18DDD164DD20400FC8D92 /* Spotify.h */,
+				AAE18DDE164DD20400FC8D92 /* iTunes.h */,
+				AAE18DCE164C569C00FC8D92 /* MainMenu.xib */,
+				AAE18DCB164C569C00FC8D92 /* MenuDelegate.h */,
+				AAE18DCC164C569C00FC8D92 /* MenuDelegate.m */,
+				AAE18DDA164C5BCE00FC8D92 /* ListenManager.h */,
+				AAE18DDB164C5BCE00FC8D92 /* ListenManager.m */,
+				AAE18DDF164DD42000FC8D92 /* Track.h */,
+				AAE18DE0164DD42000FC8D92 /* Track.m */,
+				AAE18DE2164E0F7400FC8D92 /* ListenManagerDelegate.h */,
 			);
 			path = Riffrat;
 			sourceTree = "<group>";
@@ -167,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE18DC6164C569C00FC8D92 /* main.m in Sources */,
-				AAE18DCD164C569C00FC8D92 /* AppDelegate.m in Sources */,
+				AAE18DCD164C569C00FC8D92 /* MenuDelegate.m in Sources */,
+				AAE18DDC164C5BCE00FC8D92 /* ListenManager.m in Sources */,
+				AAE18DE1164DD42000FC8D92 /* Track.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +247,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -249,7 +271,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -262,6 +284,7 @@
 				GCC_PREFIX_HEADER = "Riffrat/Riffrat-Prefix.pch";
 				INFOPLIST_FILE = "Riffrat/Riffrat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -274,6 +297,7 @@
 				GCC_PREFIX_HEADER = "Riffrat/Riffrat-Prefix.pch";
 				INFOPLIST_FILE = "Riffrat/Riffrat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
