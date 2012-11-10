@@ -21,6 +21,7 @@
     
     iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+    currentTrack = [[Track alloc] init];
     
     return self;
 }
@@ -29,7 +30,11 @@
  * Both of these handle notifications from iTunes and Spotify.
  */
 -(void) updateSpotifyTrackInfo:(NSNotification *)notification {
-    // Get the tracr info from iTunes
+    // If it's not running then don't bother
+    if(![spotify isRunning])
+        return;
+    
+    // Get the track info from iTunes
     Track *track = [[Track alloc] init];
     
     [track setArtist: [[spotify currentTrack] artist]];
@@ -44,7 +49,11 @@
 }
 
 -(void) updateiTunesTrackInfo:(NSNotification *)notification {
-    // Get the tracr info from iTunes
+    // If it's not running don't even bother.
+    if(![iTunes isRunning])
+        return;
+    
+    // Get the track info from iTunes
     Track *track = [[Track alloc] init];
     
     [track setArtist: [[iTunes currentTrack] artist]];

@@ -20,9 +20,7 @@
 }
 
 -(void) updateTrack:(Track *)track {
-    NSLog(@"Updated track!");
     NSString *trackString = [NSString stringWithFormat:@"%@ on %@ by %@", [track name], [track album], [track artist]];
-    
     [_currentTrackItem setTitle: trackString];
 }
 
