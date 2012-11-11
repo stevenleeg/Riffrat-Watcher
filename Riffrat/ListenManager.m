@@ -11,6 +11,7 @@
 @implementation ListenManager
 
 @synthesize delegate;
+@synthesize server;
 
 -(id) init {
     self = [super init];
@@ -22,6 +23,8 @@
     iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
     currentTrack = [[Track alloc] init];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self selector: @selector(checkTrack) userInfo: nil repeats: YES];
     
     return self;
 }
@@ -72,6 +75,12 @@
         [self updateiTunesTrackInfo:nil];
     else if([spotify isRunning])
         [self updateSpotifyTrackInfo:nil];
+    
+    // sendTrack has checks for duplicate sending so don't worry about it
+    if([spotify isRunning] && [spotify playerPosition] > [[currentTrack length] intValue] / 2)
+        [[self server] sendTrack: currentTrack];
+    else if([iTunes isRunning] && [iTunes playerPosition] > [[currentTrack length] intValue] / 2)
+        [[self server] sendTrack: currentTrack];
 }
 
 @end

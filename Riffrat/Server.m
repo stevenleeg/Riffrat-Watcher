@@ -60,7 +60,10 @@
 }
 
 -(void) sendTrack:(Track *)track {
-    // If we're not authenticated, just stop.
+    // If the track has been sent, stop
+    if([[track sent] isEqualToNumber:[NSNumber numberWithInt:1]])
+        return;
+    // If we're not authenticated, stop.
     if([[self authenticated] isEqualToNumber:[NSNumber numberWithInt:0]])
         return;
     
@@ -76,6 +79,9 @@
     [request setDidFinishSelector: @selector(sendTrackDidFinish:)];
     [request setDidFailSelector: @selector(requestError:)];
     [request startAsynchronous];
+    
+    // Mark the track as sent
+    [track setSent: [NSNumber numberWithInt:1]];
     
     NSLog(@"[write] Sending track...");
 }

@@ -24,6 +24,7 @@
     // And listen manager
     listenManager = [[ListenManager alloc] init];
     [listenManager setDelegate: self];
+    [listenManager setServer: [self server]];
     [listenManager checkTrack];
     
     [preferencesDelegate setServer: [self server]];
@@ -34,9 +35,6 @@
     // Update the UI
     NSString *trackString = [NSString stringWithFormat:@"%@ on %@ by %@", [track name], [track album], [track artist]];
     [_currentTrackItem setTitle: trackString];
-    
-    // Send it to the server
-    [[self server] sendTrack: track];
 }
 
 -(void) quit: (id)sender {
