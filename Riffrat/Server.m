@@ -11,6 +11,8 @@
 @implementation Server
 
 @synthesize authDelegate;
+@synthesize listenDelegate;
+@synthesize sid;
 
 -(id) init {
     self = [super init];
@@ -45,6 +47,7 @@
     if([[response valueForKey:@"status"] isEqualToNumber: [NSNumber numberWithInt: 1]]) {
         NSLog(@"[auth] Success");
         [self setAuthenticated: [NSNumber numberWithInt:1]];
+        [self setSid: [response objectForKey:@"sid"]];
     }
     else {
         NSLog(@"[auth] Error. (%@)", [response valueForKey:@"status"]);
@@ -54,6 +57,41 @@
     // Notify the delegate
     if([[self authDelegate] respondsToSelector: @selector(authenticateDidFinish:)])
         [[self authDelegate] authenticateDidFinish: response];
+}
+
+-(void) sendTrack:(Track *)track {
+    // If we're not authenticated, just stop.
+    if([[self authenticated] isEqualToNumber:[NSNumber numberWithInt:0]])
+        return;
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@api/1.0/write", _baseURL]];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: url];
+    
+    [request setPostValue: [track artist] forKey:@"artist"];
+    [request setPostValue: [track album] forKey:@"album"];
+    [request setPostValue: [track name] forKey:@"name"];
+    [request setPostValue: [self sid] forKey:@"sid"];
+    
+    [request setDelegate: self];
+    [request setDidFinishSelector: @selector(sendTrackDidFinish:)];
+    [request setDidFailSelector: @selector(requestError:)];
+    [request startAsynchronous];
+    
+    NSLog(@"[write] Sending track...");
+}
+
+-(void) sendTrackDidFinish:(ASIHTTPRequest *)request {
+    NSDictionary *response = [[request responseString] JSONValue];
+    if(![[response objectForKey:@"status"] isEqualToNumber: [NSNumber numberWithInt:1]]) {
+        NSLog(@"[write] Failed with error %@", [response objectForKey:@"error"]);
+        NSLog(@"[write] Resp: %@", [request responseString]);
+        return;
+    }
+    
+    if([[self listenDelegate] respondsToSelector:@selector(sendTrackDidFinish:)])
+        [[self listenDelegate] sendTrackDidFinish: response];
+    
+    NSLog(@"[write] Success.");
 }
 
 -(void)requestError: (ASIHTTPRequest*) request {

@@ -13,6 +13,6 @@
 @optional
 -(void) authenticateDidFinish: (NSDictionary *) response;
 -(void) authenticateDidFail: (NSNumber *) responseCode;
--(void) listenDidFinish;
+-(void) sendTrackDidFinish: (NSDictionary *) response;
 
 @end

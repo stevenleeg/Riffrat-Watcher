@@ -31,8 +31,12 @@
 }
 
 -(void) updateTrack:(Track *)track {
+    // Update the UI
     NSString *trackString = [NSString stringWithFormat:@"%@ on %@ by %@", [track name], [track album], [track artist]];
     [_currentTrackItem setTitle: trackString];
+    
+    // Send it to the server
+    [[self server] sendTrack: track];
 }
 
 -(void) quit: (id)sender {
