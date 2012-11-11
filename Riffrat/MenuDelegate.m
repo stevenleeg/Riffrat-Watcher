@@ -17,6 +17,12 @@
     [self.statusItem setMenu: _menu];
     [self.statusItem setTitle: @"R"];
     [self.statusItem setHighlightMode: YES];
+    
+    // Create a server object
+    [self setServer: [[Server alloc] init]];
+    
+    [preferencesDelegate setServer: [self server]];
+    [preferencesDelegate applicationDidFinishLoading: aNotification];
 }
 
 -(void) updateTrack:(Track *)track {
