@@ -186,9 +186,8 @@
 			children = (
 				AAE18DC0164C569C00FC8D92 /* Supporting Files */,
 				AAE18E8D164EE07700FC8D92 /* Images */,
-				AAE18EB8164EE54F00FC8D92 /* Services */,
+				AAE18EB8164EE54F00FC8D92 /* Classes */,
 				AAE18EB9164EE56A00FC8D92 /* Controllers */,
-				AAE18EBA164EE58400FC8D92 /* Classes */,
 				AAE18DCE164C569C00FC8D92 /* MainMenu.xib */,
 			);
 			path = Riffrat;
@@ -274,9 +273,11 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		AAE18EB8164EE54F00FC8D92 /* Services */ = {
+		AAE18EB8164EE54F00FC8D92 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AAE18DDF164DD42000FC8D92 /* Track.h */,
+				AAE18DE0164DD42000FC8D92 /* Track.m */,
 				AAE18DE2164E0F7400FC8D92 /* ListenManagerDelegate.h */,
 				AAE18E87164E27F400FC8D92 /* ServerDelegate.h */,
 				AAE18DDA164C5BCE00FC8D92 /* ListenManager.h */,
@@ -284,7 +285,7 @@
 				AAE18DE5164E1B8100FC8D92 /* Server.h */,
 				AAE18DE6164E1B8100FC8D92 /* Server.m */,
 			);
-			name = Services;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		AAE18EB9164EE56A00FC8D92 /* Controllers */ = {
@@ -296,15 +297,6 @@
 				AAE18E89164E283800FC8D92 /* PreferencesDelegate.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		AAE18EBA164EE58400FC8D92 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				AAE18DDF164DD42000FC8D92 /* Track.h */,
-				AAE18DE0164DD42000FC8D92 /* Track.m */,
-			);
-			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,6 +528,7 @@
 				AAE18DD5164C569C00FC8D92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
