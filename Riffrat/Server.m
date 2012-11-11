@@ -21,7 +21,7 @@
     [self setAuthenticated: [NSNumber numberWithInt: 0]];
     
     // Change this for debugging purposes
-    _baseURL = @"http://localhost:5000/";
+    _baseURL = @"http://riffrat.com/";
     
     return self;
 }

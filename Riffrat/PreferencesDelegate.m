@@ -24,6 +24,11 @@
         [passwordField setStringValue: [userDefaults objectForKey:@"password"]];
         [self pressLogin: nil];
     }
+    
+    if([userDefaults objectForKey:@"firstlaunchshow"] == nil) {
+        [self showPreferencesWindow:nil];
+        [userDefaults setObject: [NSNumber numberWithInt: 1] forKey:@"firstlaunchshow"];
+    }
 }
 
 -(void) setServer: (Server *) in_server {
