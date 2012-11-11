@@ -18,9 +18,10 @@
     Track *currentTrack;
 }
 
-@property IBOutlet id <ListenManagerDelegate> delegate;
+@property id <ListenManagerDelegate> delegate;
 
 -(void) updateiTunesTrackInfo: (NSNotification *) notification;
 -(void) updateSpotifyTrackInfo: (NSNotification *) notification;
+-(void) checkTrack;
 
 @end

@@ -11,7 +11,7 @@
 @protocol ServerDelegate <NSObject>
 
 @optional
--(void) authenticateDidFinish: (NSNumber *) responseCode;
+-(void) authenticateDidFinish: (NSDictionary *) response;
 -(void) authenticateDidFail: (NSNumber *) responseCode;
 -(void) listenDidFinish;
 

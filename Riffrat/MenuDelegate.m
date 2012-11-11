@@ -20,6 +20,11 @@
     
     // Create a server object
     [self setServer: [[Server alloc] init]];
+    [[self server] setListenDelegate: self];
+    // And listen manager
+    listenManager = [[ListenManager alloc] init];
+    [listenManager setDelegate: self];
+    [listenManager checkTrack];
     
     [preferencesDelegate setServer: [self server]];
     [preferencesDelegate applicationDidFinishLoading: aNotification];

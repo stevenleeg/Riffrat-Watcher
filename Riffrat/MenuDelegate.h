@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ListenManagerDelegate.h"
-#import "Track.h"
 #import "PreferencesDelegate.h"
+#import "ListenManager.h"
+#import "Track.h"
 #import "Server.h"
 
-@interface MenuDelegate : NSObject <ListenManagerDelegate> {
+@interface MenuDelegate : NSObject <ListenManagerDelegate, ServerDelegate> {
     IBOutlet PreferencesDelegate *preferencesDelegate;
+    IBOutlet ListenManager *listenManager;
 }
 
 @property (assign) IBOutlet NSMenu *menu;

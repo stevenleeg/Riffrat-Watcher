@@ -67,4 +67,11 @@
     }
 }
 
+-(void) checkTrack {
+    if([iTunes isRunning])
+        [self updateiTunesTrackInfo:nil];
+    else if([spotify isRunning])
+        [self updateSpotifyTrackInfo:nil];
+}
+
 @end
