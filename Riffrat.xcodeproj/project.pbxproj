@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3821ED1650112C003F465E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3821EC1650112C003F465E /* Sparkle.framework */; };
+		AA3821EF16501155003F465E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA3821EC1650112C003F465E /* Sparkle.framework */; };
+		AA3821F116501202003F465E /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = AA3821F016501202003F465E /* dsa_pub.pem */; };
 		AAE18DBA164C569C00FC8D92 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE18DB9164C569C00FC8D92 /* Cocoa.framework */; };
 		AAE18DC4164C569C00FC8D92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE18DC2164C569C00FC8D92 /* InfoPlist.strings */; };
 		AAE18DC6164C569C00FC8D92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE18DC5164C569C00FC8D92 /* main.m */; };
@@ -44,7 +47,22 @@
 		AAE18EB7164EE51900FC8D92 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE18EAE164EE45C00FC8D92 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AA3821EE16501143003F465E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AA3821EF16501155003F465E /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		AA3821EC1650112C003F465E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		AA3821F016501202003F465E /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		AAE18DB5164C569C00FC8D92 /* Riffrat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Riffrat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE18DB9164C569C00FC8D92 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAE18DBC164C569C00FC8D92 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -132,6 +150,7 @@
 				AAE18EB3164EE4FC00FC8D92 /* SystemConfiguration.framework in Frameworks */,
 				AAE18DBA164C569C00FC8D92 /* Cocoa.framework in Frameworks */,
 				AAE18DE4164E15A100FC8D92 /* ScriptingBridge.framework in Frameworks */,
+				AA3821ED1650112C003F465E /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +177,7 @@
 		AAE18DB8164C569C00FC8D92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA3821EC1650112C003F465E /* Sparkle.framework */,
 				AAE18EB4164EE50300FC8D92 /* CoreServices.framework */,
 				AAE18EB2164EE4FC00FC8D92 /* SystemConfiguration.framework */,
 				AAE18EAE164EE45C00FC8D92 /* libxml2.dylib */,
@@ -196,6 +216,7 @@
 		AAE18DC0164C569C00FC8D92 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA3821F016501202003F465E /* dsa_pub.pem */,
 				AAE18DDD164DD20400FC8D92 /* Spotify.h */,
 				AAE18DDE164DD20400FC8D92 /* iTunes.h */,
 				AAE18DC1164C569C00FC8D92 /* Riffrat-Info.plist */,
@@ -309,6 +330,7 @@
 				AAE18DB1164C569C00FC8D92 /* Sources */,
 				AAE18DB2164C569C00FC8D92 /* Frameworks */,
 				AAE18DB3164C569C00FC8D92 /* Resources */,
+				AA3821EE16501143003F465E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -354,6 +376,7 @@
 				AAE18DCA164C569C00FC8D92 /* Credits.rtf in Resources */,
 				AAE18DD0164C569C00FC8D92 /* MainMenu.xib in Resources */,
 				AAE18E8C164EE07400FC8D92 /* check.png in Resources */,
+				AA3821F116501202003F465E /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
