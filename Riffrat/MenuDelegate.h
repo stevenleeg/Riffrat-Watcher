@@ -24,6 +24,7 @@
 @property (strong) Server *server;
 
 -(IBAction) quit: (id) sender;
+-(IBAction) openRiffrat: (id) sender;
 -(void) updateTrack: (Track *)track;
 
 @end

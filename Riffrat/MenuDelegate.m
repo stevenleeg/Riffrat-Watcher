@@ -37,6 +37,10 @@
     [_currentTrackItem setTitle: trackString];
 }
 
+-(void) openRiffrat:(id) sender {
+    [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:@"http://riffrat.com"]];
+}
+
 -(void) quit: (id)sender {
     [[NSApplication sharedApplication] terminate: sender];
 }

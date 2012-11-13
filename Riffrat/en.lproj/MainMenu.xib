@@ -1330,6 +1330,14 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="380648547">
+						<reference key="NSMenu" ref="995053884"/>
+						<string key="NSTitle">Open Riffrat</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="337914972">
 						<reference key="NSMenu" ref="995053884"/>
 						<string key="NSTitle">Disable sending</string>
@@ -1375,7 +1383,6 @@
 							<string key="NSFrame">{{13, 10}, {330, 139}}</string>
 							<reference key="NSSuperview" ref="343087947"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="448850755"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="323951839">
@@ -1389,7 +1396,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{77, 1}, {157, 32}}</string>
 												<reference key="NSSuperview" ref="1046170143"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="181953607">
@@ -1449,7 +1455,6 @@
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 33}, {310, 93}}</string>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:11</string>
 									</object>
 									<string key="NSLabel">General</string>
@@ -2399,6 +2404,14 @@
 						<reference key="destination" ref="592754244"/>
 					</object>
 					<int key="connectionID">726</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openRiffrat:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="380648547"/>
+					</object>
+					<int key="connectionID">770</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3475,6 +3488,7 @@
 							<reference ref="103764729"/>
 							<reference ref="879285387"/>
 							<reference ref="823797903"/>
+							<reference ref="380648547"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -4332,6 +4346,11 @@
 						<reference key="object" ref="17901867"/>
 						<reference key="parent" ref="1046170143"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">769</int>
+						<reference key="object" ref="380648547"/>
+						<reference key="parent" ref="995053884"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -4595,6 +4614,7 @@
 				<string key="763.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="766.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="767.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="769.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4607,7 +4627,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">768</int>
+			<int key="maxID">770</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4622,17 +4642,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">MenuDelegate</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">quit:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">quit:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="openRiffrat:">id</string>
+						<string key="quit:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="openRiffrat:">
+							<string key="name">openRiffrat:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="quit:">
 							<string key="name">quit:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="currentTrackItem">NSMenuItem</string>
 						<string key="listenManager">ListenManager</string>
